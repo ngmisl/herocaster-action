@@ -18,13 +18,13 @@ app.frame("/", (c) => {
     ),
     intents: [
       // biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
-      <Button.AddCastAction action="/log-this">Add</Button.AddCastAction>,
+      <Button.AddCastAction action="/forward">Add</Button.AddCastAction>,
     ],
   });
 });
 
 app.castAction(
-  "/log-this",
+  "/forward",
   async (c) => {
     const { actionData } = c;
     const { messageHash } = actionData;
@@ -47,7 +47,7 @@ app.castAction(
       type: "message",
     });
   },
-  { name: "Log This!", icon: "log" }
+  { name: "Forwarding!", icon: "log" }
 );
 
 // @ts-ignore
