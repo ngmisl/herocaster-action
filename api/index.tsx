@@ -47,7 +47,7 @@ app.castAction(
       type: "message",
     });
   },
-  { name: "Forwarding!", icon: "log" }
+  { name: "Hercast0r!", icon: "log" }
 );
 
 // @ts-ignore
