@@ -36,7 +36,7 @@ app.castAction(
       });
     }
 
-    const herocastUrl = `https://app.herocast.xyz/conversation/${messageHash}`;
+    const herocastUrl = `https://app.herocast.xyz/conversation/${c.actionData.castld.hash}`;
     console.log(
       `Redirecting to ${herocastUrl} for castId ${actionData.castId} from ${actionData.fid}`
     );
