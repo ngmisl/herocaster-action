@@ -1,6 +1,6 @@
 ```
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 Head to http://localhost:5173/api# herocaster-action
