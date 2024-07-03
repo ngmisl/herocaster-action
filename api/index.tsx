@@ -42,7 +42,7 @@ app.castAction(
     );
 
     return c.res({
-      message: "Redirecting to HeroCast",
+      message: "Open cast in HeroCast",
       link: herocastUrl,
       type: "message",
     });
