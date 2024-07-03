@@ -27,14 +27,7 @@ app.castAction(
   "/forward",
   async (c) => {
     const { actionData } = c;
-    const { messageHash } = actionData;
 
-    if (!messageHash) {
-      return c.res({
-        message: "Message hash not found",
-        type: "message",
-      });
-    }
 
     const herocastUrl = `https://app.herocast.xyz/conversation/${c.actionData.castld.hash}`;
     console.log(
