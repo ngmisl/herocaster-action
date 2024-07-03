@@ -13,7 +13,7 @@ app.frame("/", (c) => {
   return c.res({
     image: (
       <div style={{ color: "white", display: "flex", fontSize: 60 }}>
-        Add "Herocast0r" Action
+        Add "Herocast0r" Action by @metaend.eth
       </div>
     ),
     intents: [
