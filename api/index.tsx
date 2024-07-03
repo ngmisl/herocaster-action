@@ -6,6 +6,7 @@ import { handle } from "frog/vercel";
 export const app = new Frog({
   assetsPath: "/",
   basePath: "/api",
+  title: "Herocast0r",
 });
 
 app.frame("/", (c) => {
@@ -16,6 +17,7 @@ app.frame("/", (c) => {
       </div>
     ),
     intents: [
+      // biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
       <Button.AddCastAction action="/log-this">Add</Button.AddCastAction>,
     ],
   });
