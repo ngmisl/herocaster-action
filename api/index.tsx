@@ -42,7 +42,7 @@ app.castAction(
     );
 
     return c.res({
-      message: "Open cast in HeroCast",
+      message: `Open cast in HeroCast. Click <a href="${herocastUrl}" target="_blank">here</a> to open in a new tab.`,
       link: herocastUrl,
       type: "message",
     });
