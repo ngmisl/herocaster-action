@@ -2,23 +2,47 @@ import { Button, Frog } from "frog";
 import { devtools } from "frog/dev";
 import { serveStatic } from "frog/serve-static";
 import { handle } from "frog/vercel";
+import { Box, Heading, Text, VStack, vars } from "../lib/ui.js";
 
 export const app = new Frog({
   assetsPath: "/",
   basePath: "/api",
   title: "Herocast0r",
+  ui: { vars },
 });
 
 app.frame("/", (c) => {
   return c.res({
     image: (
-      <div style={{ color: "white", display: "flex", fontSize: 60 }}>
-        Add "Herocast0r" Action by @metaend.eth
-      </div>
+      <Box
+        grow
+        alignHorizontal="center"
+        alignVertical="center"
+        padding="32"
+        backgroundColor="background"
+      >
+        <Box
+          padding="24"
+          backgroundColor="pastelPink"
+          borderRadius="12"
+          borderStyle="solid"
+          borderColor="pastelYellow"
+          borderWidth="2"
+        >
+          <Heading fontSize="48" textAlign="center" color="text">
+            Add "Herocast0r"
+          </Heading>
+          <Text fontSize="24" textAlign="center" color="text">
+            Action by @metaend.eth
+          </Text>
+        </Box>
+      </Box>
     ),
     intents: [
-      // biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
       <Button.AddCastAction action="/forward">Add</Button.AddCastAction>,
+      <Button.Link href="https://www.farcaster.id/metaend.eth">
+        Follow @metaend.eth
+      </Button.Link>,
     ],
   });
 });
