@@ -2,13 +2,21 @@ import { Button, Frog } from "frog";
 import { devtools } from "frog/dev";
 import { serveStatic } from "frog/serve-static";
 import { handle } from "frog/vercel";
-import { Box, Heading, Text, VStack, vars } from "../lib/ui.js";
+import { Box, Heading, Text, vars } from "../lib/ui.js";
 
 export const app = new Frog({
   assetsPath: "/",
   basePath: "/api",
   title: "Herocast0r",
   ui: { vars },
+  hub: {
+    apiUrl: "https://hubs.airstack.xyz",
+    fetchOptions: {
+      headers: {
+        "x-airstack-hubs": "179bbdf8650f6467b9024f59bb2d4d7eb",
+      },
+    },
+  },
 });
 
 app.frame("/", (c) => {
@@ -62,7 +70,7 @@ app.castAction(
 
     const herocastUrl = `https://app.herocast.xyz/conversation/${castIdHash}`;
     console.log(
-      `Redirecting to ${herocastUrl} for castId ${castIdHash} from ${actionData.fid}`
+      `Redirecting to ${herocastUrl} for castId ${castIdHash} from ${actionData.fid}`,
     );
 
     return c.res({
@@ -71,7 +79,7 @@ app.castAction(
       type: "message",
     });
   },
-  { name: "Hercast0r!", icon: "log" }
+  { name: "Hercast0r!", icon: "log" },
 );
 
 // @ts-ignore
